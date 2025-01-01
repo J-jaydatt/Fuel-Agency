@@ -4,11 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer Register</title>
-<link rel="stylesheet" href="/CSS/index.css">
-<script src="/JS/index.js" defer></script>
+	<link rel="stylesheet" th:href="@{/CSS/index.css}">
+	<script th:src="@{/JS/index.js}" defer></script>
+
 </head>
 <body>
 	<div class="container">
+
+		<p th:if="${message == 'Customer added succesfully'}">
+			<span th:text="${message}"></span>
+		</p>
+
+		<p th:if="${message2=='Customer failed to add !!'}">
+			<span th:text="${message2}"></span>
+		</p>
+
 		<div class="form-container">
 			<h1 class="form-header">Customer Registration</h1>
 

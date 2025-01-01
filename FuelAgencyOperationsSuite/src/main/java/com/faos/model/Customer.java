@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
-@Data
+@Table
 public class Customer {
 
 	@Id
@@ -26,12 +26,24 @@ public class Customer {
     @NotNull
     @Column(length = 50)
     private String email;
-    
+
+    @Column
     private String connectionType;
+
+    @Column
     private String gender;
-    
+
+    @Column
     private String status;
+
+    @Column
     private LocalDate registrationDate;
+
+    @Column
     private LocalDate deactivationDate;
+
+    @Column
     private String reasonForDeactivation;
+
+
 }

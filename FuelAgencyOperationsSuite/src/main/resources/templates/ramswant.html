@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Customer Records</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="/CSS/Remove_customer.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>
+				<i class="fas fa-user-times"></i> Remove Customer Records
+			</h1>
+		</div>
+
+		<div class="message" th:if="${message}"
+			th:class="${message.contains('successfully') ? 'success' : 'danger'}">
+			<p th:text="${message}"></p>
+		</div>
+
+
+
+
+
+
+		<form action="/deleteCustomer" method="POST" id="deleteForm">
+			<div class="form-group">
+				<label for="consumerId">Enter Consumer ID:</label> <input
+					type="number" id="consumerId" name="consumerId" required
+					placeholder="Enter a 17-digit Consumer ID">
+			</div>
+			<div class="button-group">
+				<!-- Back Button -->
+				<a href="/" class="btn back-btn"><i class="fas fa-arrow-left"></i>
+					Back</a>
+				<!-- Delete Button -->
+				<button type="submit" class="btn delete-btn">
+					<i class="fas fa-trash-alt"></i> Delete Customer
+				</button>
+			</div>
+		</form>
+	</div>
+	<script src="/JS/Remove_customer.js"></script>
+</body>
+</html>

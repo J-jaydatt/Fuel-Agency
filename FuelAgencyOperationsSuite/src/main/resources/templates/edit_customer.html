@@ -1,4 +1,4 @@
-Q<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -14,8 +14,7 @@ Q<!DOCTYPE html>
 
 		<form action="/find" method="GET" class="search-form">
     <label for="consumerId">Enter Consumer ID:</label>
-    <input type="text" id="consumerId" name="id" 
-           th:value="${consumerId}" 
+    <input type="text" id="consumerId" name="id" th:value="${consumerId}"
            placeholder="Enter Consumer ID" 
            th:readonly="${consumerId != null}" 
            required>
@@ -31,6 +30,7 @@ Q<!DOCTYPE html>
 
 		<!-- Customer Details -->
 		<div id="customerDetails" th:if="${customer}">
+
 			<h2>Customer Details</h2>
 			<p>
 				<strong>Customer ID:</strong> <span th:text="${customer.consumerId}"></span>
@@ -42,8 +42,9 @@ Q<!DOCTYPE html>
 			<!-- Deactivated Customer Info -->
 			<div th:if="${customer.status == 'Deactivated'}">
 				<form action="/activate" method="POST">
-					<input type="hidden" name="consumerId"
-						th:value="${customer.consumerId}">
+
+					<input type="hidden" name="consumerId" th:value="${customer.consumerId}">
+
 					<p>
 						<strong>Contact Number:</strong> <span
 							th:text="${customer.contactNumber}"></span>
@@ -76,6 +77,7 @@ Q<!DOCTYPE html>
 					<strong>Status:</strong> <span th:text="${customer.status}"
 						class="status" style="color: green;"></span>
 				</p>
+
 				<form action="/updateCustomer" method="POST">
 					<input type="hidden" name="consumerId"
 						th:value="${customer.consumerId}"> <label

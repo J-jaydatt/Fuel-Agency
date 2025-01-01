@@ -9,5 +9,5 @@ import com.faos.model.Customer;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-	Optional<Customer> findByConsumerId(Long consumerId);
+	//Optional<Customer> findByConsumerId(Long consumerId);
 }
